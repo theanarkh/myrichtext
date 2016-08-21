@@ -1,0 +1,50 @@
+﻿<!DOCTYPE HTML>
+<html style="height: 100%">
+<head>
+<link rel="stylesheet" type="text/css" href="richText.css">
+</head>
+<body>
+
+
+<div contenteditable="true" id="content" style="border:1px solid gray; width:800px;height:600px"></div>
+</body>
+	<script type="text/javascript" src="jquery-2.2.3-unzip.js"></script>
+	<script type="text/javascript" src="richText.js">	
+</script>
+<script type="text/javascript">
+	var richText= new richText({
+		id:"#content",
+		attachment:{
+			type:'jpg,png,jpeg,gif,doc,docx,xls,zip,rar,7z',
+			size:10*1024*1024,
+			text:"上传附件",
+			//className:""
+			id:'dddd',	
+			fail:function(data){
+			alert(data.errorMsg)
+			},
+			success:function(data){
+				$("<div>"+data.url+"</div>").insertBefore($("#content"))
+			}
+		},
+		insertImg:{
+			type:'jpg,png,jpeg,gif',
+			size:2*1024*1024,
+			text:"插入图片",
+			fail:function(data){
+			alert(data.errorMsg)
+		},
+			success:function(data){
+				//$("#content").append
+			}
+		},
+		submit:{
+			text:"dddddddddd",
+			id:"submit",
+			className:"sub",
+			position:"right"
+		}
+	});
+	console.log(richText)
+</script>
+</html>	

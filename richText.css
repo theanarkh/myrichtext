@@ -1,0 +1,10 @@
+	.richTextUpload button{
+		background-color: rgba(100,100,100,0.5);
+		margin-right: 5px
+	}
+	.richTextUpload{
+		margin: 10px 0px
+	}
+	.richTextUpload form{
+		display: none;
+	}
